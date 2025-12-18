@@ -1,0 +1,55 @@
+<nav class="bg-gradient-to-r from-indigo-700 via-blue-700 to-indigo-600 px-4 py-3 flex items-center justify-between shadow-lg">
+  <!-- Brand -->
+ <a href="/" class="text-2xl font-extrabold text-amber-400 tracking-wide">
+  MyApp
+</a>
+
+  <!-- Hamburger (mobile only) -->
+  <button class="md:hidden text-white focus:outline-none" id="menu-btn">
+    ☰
+  </button>
+
+  <!-- Links -->
+  <ul class="hidden md:flex space-x-6 text-white font-medium" id="menu">
+    <li><a href="/store" class="hover:text-amber-300 transition">Store</a></li>
+
+    <% if (isLoggedIn) { %>
+      <% if (user.userType === 'host') { %>
+        <li><a href="/host" class="hover:text-amber-300 transition">Host</a></li>
+        <li><a href="/host-list" class="hover:text-amber-300 transition">Host List</a></li>
+      <% } else if (user.userType === 'guest') { %>
+        <li><a href="/book" class="hover:text-amber-300 transition">Bookings</a></li>
+      <% } %>
+
+      <!-- Logout as form -->
+      <li>
+        <form action="/logout" method="POST">
+          <button type="submit"
+            class="hover:text-amber-300 transition bg-transparent border-none cursor-pointer">
+            Logout
+          </button>
+        </form>
+      </li>
+    <% } else { %>
+      <li><a href="/login" class="hover:text-amber-300 transition">Login</a></li>
+      <li><a href="/signin" class="hover:text-amber-300 transition">Signin</a></li>
+    <% } %>
+  </ul>
+</nav>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+    menu.classList.toggle("flex-col");
+    menu.classList.toggle("space-y-2");
+    menu.classList.toggle("bg-gradient-to-r");
+    menu.classList.toggle("from-indigo-700");
+    menu.classList.toggle("via-blue-700");
+    menu.classList.toggle("to-indigo-600");
+    menu.classList.toggle("p-4");
+    menu.classList.toggle("rounded-lg");
+  });
+</script>

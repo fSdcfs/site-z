@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home — MyApp</title>
+  <!-- If you exposed `views` as static, prefer: /src/output.css -->
+  <link rel="stylesheet" href="/src/output.css" />
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
+
+  <!-- Navbar -->
+  <%- include("partials/navBar") %>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-indigo-700 via-blue-700 to-indigo-600"></div>
+    <!-- Decorative glow -->
+    <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-amber-400/20 blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-16 md:py-24">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+          Build, host, and grow — beautifully
+        </h1>
+      <p class="mt-4 max-w-2xl mx-auto text-base md:text-lg text-indigo-100">
+  A premium, modular platform powered by Express, MongoDB, and Tailwind. Polished UI, solid backend, and seamless workflows.  
+  <br>
+  <span class="font-semibold text-amber-300">Made by SiteX</span> — <span class="italic">Nepthon Timothy Galstaun</span>
+</p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/store" class="inline-flex items-center justify-center rounded-lg bg-amber-500 text-indigo-900 px-6 py-3 font-semibold shadow hover:bg-amber-400 transition">
+            Explore Store
+          </a>
+          <a href="/host" class="inline-flex items-center justify-center rounded-lg border border-white/30 text-white px-6 py-3 font-semibold hover:bg-white/10 transition">
+            Host your content
+          </a>
+        </div>
+
+        <!-- Social proof / stats -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 text-white/90">
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10">
+            <div class="text-2xl font-bold">99.9%</div>
+            <div class="text-sm">Uptime</div>
+          </div>
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10">
+            <div class="text-2xl font-bold">+1K</div>
+            <div class="text-sm">Assets hosted</div>
+          </div>
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10">
+            <div class="text-2xl font-bold">Fast</div>
+            <div class="text-sm">Optimized stack</div>
+          </div>
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10">
+            <div class="text-2xl font-bold">Secure</div>
+            <div class="text-sm">Session auth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature highlights -->
+  <section class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition p-6">
+        <div class="h-10 w-10 rounded-md bg-indigo-600/10 text-indigo-700 flex items-center justify-center mb-4 font-bold">F</div>
+        <h2 class="text-lg font-semibold text-indigo-800">Fast performance</h2>
+        <p class="mt-2 text-gray-600">Lean Express controllers, cached queries, and efficient Mongoose models.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition p-6">
+        <div class="h-10 w-10 rounded-md bg-blue-600/10 text-blue-700 flex items-center justify-center mb-4 font-bold">S</div>
+        <h2 class="text-lg font-semibold text-blue-800">Secure sessions</h2>
+        <p class="mt-2 text-gray-600">Session storage with MongoDB, plus CSRF‑friendly form flows.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition p-6">
+        <div class="h-10 w-10 rounded-md bg-amber-500/10 text-amber-600 flex items-center justify-center mb-4 font-bold">R</div>
+        <h2 class="text-lg font-semibold text-amber-700">Responsive design</h2>
+        <p class="mt-2 text-gray-600">Utility‑first Tailwind ensures consistent mobile‑first UI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store teaser -->
+  <section class="max-w-7xl mx-auto px-6 pb-16">
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-xl md:text-2xl font-bold text-gray-900">Featured items</h3>
+      <a href="/store" class="text-indigo-700 hover:text-indigo-900 font-medium">View all →</a>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition">
+        <div class="h-40 bg-gradient-to-br from-indigo-300 to-blue-300"></div>
+        <div class="p-4">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-gray-800">Elegant Card</h4>
+            <span class="text-amber-600 font-bold">₹499</span>
+          </div>
+          <p class="mt-2 text-sm text-gray-600">Clean layout, modern polish.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition">
+        <div class="h-40 bg-gradient-to-br from-blue-300 to-indigo-300"></div>
+        <div class="p-4">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-gray-800">Premium Grid</h4>
+            <span class="text-amber-600 font-bold">₹899</span>
+          </div>
+          <p class="mt-2 text-sm text-gray-600">Mobile‑first product grid.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition">
+        <div class="h-40 bg-gradient-to-br from-indigo-300 to-cyan-300"></div>
+        <div class="p-4">
+          <div class="flex items-center justify-between">
+            <h4 class="font-semibold text-gray-800">Gold Accent UI</h4>
+            <span class="text-amber-600 font-bold">₹1,199</span>
+          </div>
+          <p class="mt-2 text-sm text-gray-600">Royal blue + gold theming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-gradient-to-r from-indigo-700 via-blue-700 to-indigo-600 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-sm">&copy; <%= new Date().getFullYear() %> MyApp. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="/login" class="hover:text-amber-300">Login</a>
+        <a href="/signin" class="hover:text-amber-300">Signin</a>
+        <a href="/host-list" class="hover:text-amber-300">Host list</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
